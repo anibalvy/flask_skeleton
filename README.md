@@ -18,5 +18,5 @@ This is used as a boilerplate code to start new projects.
 
 ## Caveats
 - Certificate are for testing.
-- Flask doesn't like no ORM (as Django)... internal auth system looks broken.. very boomer...
+- Flask doesn't like no ORM (as Django)... flask auth system looks broken, as open to many call to db.
 
