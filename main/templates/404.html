@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+{% block title %}
+Main App
+{% endblock %}
+{% block content %} 
+        <div class="text-gray-900 dark:text-gray-50 text-8xl text-center uppercase font-black p-8  items-center py-6 md:h-128 ">
+            <p> 404 not found!!! </p>
+        </div>
+
+<script>
+    function index_options() {
+        return {
+            dark_mode: true,
+            nav_login: false,
+            start: function() {
+                this.nav_login= true
+            }
+        }
+    }
+</script>
+{% endblock content %} 
+

@@ -1,0 +1,72 @@
+{% extends "base.html" %} 
+
+{% block title %}
+Main App - Sign Up
+{% endblock %}
+{% block content %} 
+        <div class="p-8 bg-gray-900 items-center py-6 md:h-128 ">
+            <div class="mt-8 w-full md:p-5 mx-auto md:w-3/5 md:justify-center md:mt-0">
+                <div class="md:p-5 bg-white rounded-lg dark:bg-gray-800">
+                    <div class="p-5 text-center">
+                        <h2 class="flex justify-start text-2xl font-semibold text-gray-700 dark:text-white fo">Ingreso</h2>
+
+                        <form method="POST" action="{{ url_for('login') }}" >
+                            {{ login_form.hidden_tag() }} 
+                            {#{{ login_form.username.label() }} #}
+                            {{ login_form.username(class="block mt-4  w-full px-4 py-2 text-gray-700 placeholder-gray-500 bg-white border border-gray-300 rounded-md dark:text-white dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring", placeholder="Username") }}
+                            {% if login_form.username.errors %}
+								<div x-data="{ show: true }" x-show="show" class="flex justify-between items-center block mt-4  w-full px-4 py-2 text-white bg-red-500 border border-gray-300 rounded-md dark:text-white dark:bg-red-400 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" >
+								 <div class="">
+									<ul class="">
+									{% for error in login_form.username.errors %}
+										<li>{{ error }}</li>
+									{% endfor %}
+									</ul>
+								 </div>
+								 <div>
+									<button type="button"  @click="show = false"  class=" text-yellow-100">
+										<span class="text-2xl">&times;</span>
+									</button>
+								 </div>
+								</div>
+                            {% endif %}
+                            {{ login_form.password(class="block mt-4 w-full px-4 py-2 text-gray-700 placeholder-gray-500 bg-white border border-gray-300 rounded-md dark:text-white dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring", placeholder="Password") }}
+                            {% if login_form.password.errors %}
+								<div x-data="{ show: true }" x-show="show" class="flex justify-between items-center block mt-4  w-full px-4 py-2 text-white bg-red-500 border border-gray-300 rounded-md dark:text-white dark:bg-red-400 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" >
+								 <div class="">
+									<ul class="">
+									{% for error in login_form.password.errors %}
+										<li>{{ error }}</li>
+									{% endfor %}
+									</ul>
+								 </div>
+								 <div>
+									<button type="button"  @click="show = false"  class=" text-yellow-100">
+										<span class="text-2xl">&times;</span>
+									</button>
+								 </div>
+								</div>
+                            {% endif %}
+                            <div class="block mt-4 px-4 py-2  text-sm text-gray-600 dark:text-gray-200 hover:underline">
+                            <a href="/" class="text-sm text-gray-600 dark:text-gray-200 hover:underline">¿Olvido sus Credenciales?</a>
+                            </div>
+                            {{ login_form.submit(class="btn w-2/3 md:w-1/3 mt-4 px-4 py-2 font-semibold text-white transition-colors duration-200 transform bg-gray-900 rounded-md dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700")}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<script>
+    function index_options() {
+        return {
+            dark_mode: true,
+            nav_login: false,
+            start: function() {
+                this.nav_login= true
+            }
+        }
+    }
+</script>
+{% endblock content %} 
+

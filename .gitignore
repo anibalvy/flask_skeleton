@@ -1,0 +1,7 @@
+docker/.env
+config.py
+main/config.py
+__pycache__
+*/__pycache__
+*/*/__pycache__
+tailwind/node_modules

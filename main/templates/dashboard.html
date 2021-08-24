@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %} 
+<div class="flex flex-row text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-50">
+    {% include "sidebar.html" %}
+    <div class="p-10">
+    {% if session['rol'] == '1'  %}
+        <div>
+            <p>username {{ session['username']  }}</p>
+            <p>role {{ session['rol']  }}</p>
+        </div>
+    {% else %}
+        <div>
+        <p>role NOT admin, </p>
+        <p>session: {{ session['username']  }}</p>
+        <p>session: {{ session['rol']  }}</p>
+        <p>session: {{ session['email']  }}</p>
+        <p>session: {{ session['options']  }}</p>
+        <p>session: {{ session['enabled']  }}</p>
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock content %} 

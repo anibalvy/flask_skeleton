@@ -1,0 +1,19 @@
+{
+  "name": "tailwind",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/styles.css -o ../main/static/styles-build.css"
+  },
+  "keywords": [],
+  "author": "kanibalv <kanibalv at  gmail> (https://github.com/kanibalv)",
+  "license": "MIT",
+  "devDependencies": {
+    "@iconscout/unicons": "^3.0.6",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.10",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.1"
+  }
+}

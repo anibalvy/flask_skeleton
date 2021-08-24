@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+
+{% block title %}
+Main App
+{% endblock %}
+{% block content %} 
+        <div class="p-8 bg-gray-900 items-center py-6 md:h-128 ">
+            <p> 500 error!!!  </p>
+            <p> error: {{ error  }}  </p>
+        </div>
+
+<script>
+    function index_options() {
+        return {
+            dark_mode: true,
+            nav_login: false,
+            start: function() {
+                this.nav_login= true
+            }
+        }
+    }
+</script>
+{% endblock content %} 
+
